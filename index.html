@@ -145,6 +145,114 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/03/17/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/03/17/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">路径规划-基于采样的路径规划</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2026-03-17 15:35:48 / Modified: 16:51:38" itemprop="dateCreated datePublished" datetime="2026-03-17T15:35:48+08:00">2026-03-17</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="基于采样的路径规划算法"><a href="#基于采样的路径规划算法" class="headerlink" title="基于采样的路径规划算法"></a>基于采样的路径规划算法</h1><h2 id="采样规划算法简介"><a href="#采样规划算法简介" class="headerlink" title="采样规划算法简介"></a>采样规划算法简介</h2><ol>
+<li>PRM:1.先随机采样n个点构成图 2.基于图的搜索</li>
+<li>RRT:快速搜索随机树， <strong>非最优解</strong>（连渐进最优都不是）。</li>
+<li>RRT*:找到解之后继续去做优化，知道达到给的最大搜索时间，因此时间慢。作了两个改进，一是改变了新节点连接到树的规则。二是对搜索树进行了剪枝操作，使其更接近于真实的最优路径。</li>
+<li>RRT-connect：双向扩展的RRT，从start和goal同时扩展，搜索速度比较快（对树的搜索要比对点的搜索更简单）。<strong>ROS-Moveit！默认使用此算法</strong></li>
+</ol>
+<h2 id="RRT算法"><a href="#RRT算法" class="headerlink" title="RRT算法"></a>RRT算法</h2><p>RRT描述为：</p>
+<ol>
+<li>采样（随机采样、）</li>
+<li>寻找采样点距离最近的树节点</li>
+<li>根据最大步长，把这个点控制在最大步长之内（相当于以根节点画一个圆，采样点在圆内就直接连接，不在则以连线与圆交点作为新的节点）</li>
+<li>进行碰撞检测，如果未碰撞，则将新节点加入到树中</li>
+</ol>
+<p>伪代码图如下：</p>
+<p><img src="/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95.assets/image-20260317161031166.png" alt="image-20260317161031166"></p>
+<p>优点：</p>
+<p>​	能找到一条从start到goal的路径</p>
+<p>***缺点(可以作为优化的点)***：</p>
+<ol>
+<li>非最优解—&gt;RRT*</li>
+<li>算法效率低（时间长）—&gt;RRT-connect</li>
+<li>整个空间均匀采样</li>
+</ol>
+<h2 id="RRT"><a href="#RRT" class="headerlink" title="RRT*"></a>RRT*</h2><p>RRT*描述为：</p>
+<ol>
+<li>采样（随机采样等）</li>
+<li>寻找采样点距离最近的树节点</li>
+<li>根据最大步长，把这个点控制在最大步长之内（相当于以根节点画一个圆，采样点在圆内就直接连接，不在则以连线与圆交点作为新的节点）</li>
+<li>进行碰撞检测</li>
+<li><strong>（改进之处）</strong>如果未碰撞，则以x<del>new</del>为圆心，r为半径，找圆中的节点（或找K-nearnest），在这K个点中重新选择父节点（要求为父节点到根节点的距离最短）</li>
+<li><strong>（改进之处）</strong>对于剩下的K-1个节点进行重新连接</li>
+</ol>
+<p><img src="/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95.assets/image-20260317162422619.png" alt="image-20260317162422619"></p>
+<h2 id="RRT-Connect"><a href="#RRT-Connect" class="headerlink" title="RRT-Connect"></a>RRT-Connect</h2><p>算法描述：</p>
+<ol>
+<li>从start和goal分别生成一颗树</li>
+<li>当两棵树连接时，生成路径</li>
+<li><strong>贪婪思想</strong></li>
+</ol>
+<p>算法优势：</p>
+<ol>
+<li>增量式生长（分别生长）</li>
+<li>搜索速度快</li>
+</ol>
+<h2 id="Informed-RRT"><a href="#Informed-RRT" class="headerlink" title="Informed-RRT*"></a>Informed-RRT*</h2><p>改进：</p>
+<ol>
+<li>在搜索空间上进行了处理</li>
+<li>在第一次找到路径之后，缩小搜索空间来寻找更优解（<strong>也是存在缺点，可能在外面有更好的解</strong>）</li>
+</ol>
+<p><img src="/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95.assets/image-20260317164712067.png" alt="image-20260317164712067"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2026/03/11/ROS-TF-%E5%A4%9A%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -293,65 +401,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/03/11/My-New-post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2026/03/11/My-New-post/" class="post-title-link" itemprop="url">我的第一篇文章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2026-03-11 07:00:00 / Modified: 17:15:29" itemprop="dateCreated datePublished" datetime="2026-03-11T07:00:00+08:00">2026-03-11</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h1><p>这是我的第一篇 Hexo 博客文章！</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
 
@@ -421,10 +470,6 @@
           <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>

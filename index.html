@@ -170,7 +170,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2026-03-17 15:35:48 / Modified: 16:51:38" itemprop="dateCreated datePublished" datetime="2026-03-17T15:35:48+08:00">2026-03-17</time>
+              <time title="Created: 2026-03-17 15:35:48 / Modified: 18:30:35" itemprop="dateCreated datePublished" datetime="2026-03-17T15:35:48+08:00">2026-03-17</time>
             </span>
 
           
@@ -198,7 +198,7 @@
 <li>进行碰撞检测，如果未碰撞，则将新节点加入到树中</li>
 </ol>
 <p>伪代码图如下：</p>
-<p><img src="/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95.assets/image-20260317161031166.png" alt="image-20260317161031166"></p>
+<p><img src="/imgs/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95/image-20260317161952729.png"></p>
 <p>优点：</p>
 <p>​	能找到一条从start到goal的路径</p>
 <p>***缺点(可以作为优化的点)***：</p>
@@ -216,7 +216,7 @@
 <li><strong>（改进之处）</strong>如果未碰撞，则以x<del>new</del>为圆心，r为半径，找圆中的节点（或找K-nearnest），在这K个点中重新选择父节点（要求为父节点到根节点的距离最短）</li>
 <li><strong>（改进之处）</strong>对于剩下的K-1个节点进行重新连接</li>
 </ol>
-<p><img src="/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95.assets/image-20260317162422619.png" alt="image-20260317162422619"></p>
+<p><img src="/imgs/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95/image-20260317162422619.png"></p>
 <h2 id="RRT-Connect"><a href="#RRT-Connect" class="headerlink" title="RRT-Connect"></a>RRT-Connect</h2><p>算法描述：</p>
 <ol>
 <li>从start和goal分别生成一颗树</li>
@@ -233,7 +233,7 @@
 <li>在搜索空间上进行了处理</li>
 <li>在第一次找到路径之后，缩小搜索空间来寻找更优解（<strong>也是存在缺点，可能在外面有更好的解</strong>）</li>
 </ol>
-<p><img src="/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95.assets/image-20260317164712067.png" alt="image-20260317164712067"></p>
+<p><img src="/imgs/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95/image-20260317164712067.png"></p>
 
       
     </div>

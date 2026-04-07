@@ -20,28 +20,37 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="一、继承的概念及定义1.1 继承的定义​	继承的本质是面向对象程序设计使代码复用的核心手段，可以保证在原有类（基类、父类）的基础（存放公共的信息）上进行扩展，形成派生类（子类）。 12345678910111213141516171819202122232425class Person  &#x2F;&#x2F;父类&#123;public:    void Print()    &#123;        cout">
+<meta property="og:type" content="article">
+<meta property="og:title" content="继承-cpp进阶">
+<meta property="og:url" content="http://example.com/2026/04/02/%E7%BB%A7%E6%89%BF-cpp%E8%BF%9B%E9%98%B6/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、继承的概念及定义1.1 继承的定义​	继承的本质是面向对象程序设计使代码复用的核心手段，可以保证在原有类（基类、父类）的基础（存放公共的信息）上进行扩展，形成派生类（子类）。 12345678910111213141516171819202122232425class Person  &#x2F;&#x2F;父类&#123;public:    void Print()    &#123;        cout">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/imgs/%E7%BB%A7%E6%89%BF-cpp%E8%BF%9B%E9%98%B6/image-20260402200733066.png">
+<meta property="og:image" content="http://example.com/imgs/%E7%BB%A7%E6%89%BF-cpp%E8%BF%9B%E9%98%B6/image-20260407190652564.png">
+<meta property="og:image" content="http://example.com/imgs/%E7%BB%A7%E6%89%BF-cpp%E8%BF%9B%E9%98%B6/image-20260407200652481.png">
+<meta property="og:image" content="http://example.com/imgs/%E7%BB%A7%E6%89%BF-cpp%E8%BF%9B%E9%98%B6/image-20260407200705020.png">
+<meta property="article:published_time" content="2026-04-02T11:47:12.000Z">
+<meta property="article:modified_time" content="2026-04-07T12:28:14.230Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/imgs/%E7%BB%A7%E6%89%BF-cpp%E8%BF%9B%E9%98%B6/image-20260402200733066.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2026/04/02/%E7%BB%A7%E6%89%BF-cpp%E8%BF%9B%E9%98%B6/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>继承-cpp进阶 | Hexo</title>
   
 
 
@@ -139,9 +148,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -157,10 +167,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2026/04/02/%E7%BB%A7%E6%89%BF-cpp%E8%BF%9B%E9%98%B6/" class="post-title-link" itemprop="url">继承-cpp进阶</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          继承-cpp进阶
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -190,7 +199,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="一、继承的概念及定义"><a href="#一、继承的概念及定义" class="headerlink" title="一、继承的概念及定义"></a>一、继承的概念及定义</h1><h2 id="1-1-继承的定义"><a href="#1-1-继承的定义" class="headerlink" title="1.1 继承的定义"></a>1.1 继承的定义</h2><p>​	继承的本质是面向对象程序设计使代码复用的核心手段，可以保证在原有类（基类、父类）的基础（存放公共的信息）上进行扩展，形成派生类（子类）。</p>
+        <h1 id="一、继承的概念及定义"><a href="#一、继承的概念及定义" class="headerlink" title="一、继承的概念及定义"></a>一、继承的概念及定义</h1><h2 id="1-1-继承的定义"><a href="#1-1-继承的定义" class="headerlink" title="1.1 继承的定义"></a>1.1 继承的定义</h2><p>​	继承的本质是面向对象程序设计使代码复用的核心手段，可以保证在原有类（基类、父类）的基础（存放公共的信息）上进行扩展，形成派生类（子类）。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>  <span class="comment">//父类</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;name:&quot;</span> &lt;&lt; _name &lt;&lt;endl;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;age:&quot;</span> &lt;&lt; _age &lt;&lt;endl;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    string _name = <span class="string">&quot;peter&quot;</span>;</span><br><span class="line">    <span class="type">int</span> _age = <span class="number">18</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> : <span class="keyword">public</span> Person  <span class="comment">//子类</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="type">int</span> _stuid;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Teacher</span> : <span class="keyword">public</span> Person  <span class="comment">//子类</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="type">int</span> _jobid;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h2 id="1-2-继承方式"><a href="#1-2-继承方式" class="headerlink" title="1.2 继承方式"></a>1.2 继承方式</h2><p>​	一共三种继承方式：public  protected  private，他们的区别如下图</p>
@@ -227,339 +236,30 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> : <span class="keyword">virtual</span> <span class="keyword">public</span> Person</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">     <span class="built_in">Student</span>(<span class="type">const</span> <span class="type">char</span>* name, <span class="type">int</span> num)</span><br><span class="line">     :<span class="built_in">Person</span>(name)</span><br><span class="line">     ,_num(num)</span><br><span class="line">     &#123;&#125;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line"> 	<span class="type">int</span> _num; <span class="comment">//学号</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Teacher</span> : <span class="keyword">virtual</span> <span class="keyword">public</span> Person</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">     <span class="built_in">Teacher</span>(<span class="type">const</span> <span class="type">char</span>* name, <span class="type">int</span> id)</span><br><span class="line">     :<span class="built_in">Person</span>(name)</span><br><span class="line">     , _id(id)</span><br><span class="line">     &#123;&#125;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line"> 	<span class="type">int</span> _id; <span class="comment">// 职⼯编号</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/03/18/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E4%BB%A3%E7%A0%81/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2026/03/18/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E4%BB%A3%E7%A0%81/" class="post-title-link" itemprop="url">路径规划-基于采样的路径规划-RRT代码</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2026-03-18 14:48:05 / Modified: 14:48:15" itemprop="dateCreated datePublished" datetime="2026-03-18T14:48:05+08:00">2026-03-18</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2026/03/18/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E4%BB%A3%E7%A0%81/" rel="prev" title="路径规划-基于采样的路径规划-RRT代码">
+      <i class="fa fa-chevron-left"></i> 路径规划-基于采样的路径规划-RRT代码
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/03/17/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2026/03/17/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">路径规划-基于采样的路径规划</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2026-03-17 15:35:48 / Modified: 18:30:35" itemprop="dateCreated datePublished" datetime="2026-03-17T15:35:48+08:00">2026-03-17</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="基于采样的路径规划算法"><a href="#基于采样的路径规划算法" class="headerlink" title="基于采样的路径规划算法"></a>基于采样的路径规划算法</h1><h2 id="采样规划算法简介"><a href="#采样规划算法简介" class="headerlink" title="采样规划算法简介"></a>采样规划算法简介</h2><ol>
-<li>PRM:1.先随机采样n个点构成图 2.基于图的搜索</li>
-<li>RRT:快速搜索随机树， <strong>非最优解</strong>（连渐进最优都不是）。</li>
-<li>RRT*:找到解之后继续去做优化，知道达到给的最大搜索时间，因此时间慢。作了两个改进，一是改变了新节点连接到树的规则。二是对搜索树进行了剪枝操作，使其更接近于真实的最优路径。</li>
-<li>RRT-connect：双向扩展的RRT，从start和goal同时扩展，搜索速度比较快（对树的搜索要比对点的搜索更简单）。<strong>ROS-Moveit！默认使用此算法</strong></li>
-</ol>
-<h2 id="RRT算法"><a href="#RRT算法" class="headerlink" title="RRT算法"></a>RRT算法</h2><p>RRT描述为：</p>
-<ol>
-<li>采样（随机采样、）</li>
-<li>寻找采样点距离最近的树节点</li>
-<li>根据最大步长，把这个点控制在最大步长之内（相当于以根节点画一个圆，采样点在圆内就直接连接，不在则以连线与圆交点作为新的节点）</li>
-<li>进行碰撞检测，如果未碰撞，则将新节点加入到树中</li>
-</ol>
-<p>伪代码图如下：</p>
-<p><img src="/imgs/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95/image-20260317161952729.png"></p>
-<p>优点：</p>
-<p>​	能找到一条从start到goal的路径</p>
-<p>***缺点(可以作为优化的点)***：</p>
-<ol>
-<li>非最优解—&gt;RRT*</li>
-<li>算法效率低（时间长）—&gt;RRT-connect</li>
-<li>整个空间均匀采样</li>
-</ol>
-<h2 id="RRT"><a href="#RRT" class="headerlink" title="RRT*"></a>RRT*</h2><p>RRT*描述为：</p>
-<ol>
-<li>采样（随机采样等）</li>
-<li>寻找采样点距离最近的树节点</li>
-<li>根据最大步长，把这个点控制在最大步长之内（相当于以根节点画一个圆，采样点在圆内就直接连接，不在则以连线与圆交点作为新的节点）</li>
-<li>进行碰撞检测</li>
-<li><strong>（改进之处）</strong>如果未碰撞，则以x<del>new</del>为圆心，r为半径，找圆中的节点（或找K-nearnest），在这K个点中重新选择父节点（要求为父节点到根节点的距离最短）</li>
-<li><strong>（改进之处）</strong>对于剩下的K-1个节点进行重新连接</li>
-</ol>
-<p><img src="/imgs/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95/image-20260317162422619.png"></p>
-<h2 id="RRT-Connect"><a href="#RRT-Connect" class="headerlink" title="RRT-Connect"></a>RRT-Connect</h2><p>算法描述：</p>
-<ol>
-<li>从start和goal分别生成一颗树</li>
-<li>当两棵树连接时，生成路径</li>
-<li><strong>贪婪思想</strong></li>
-</ol>
-<p>算法优势：</p>
-<ol>
-<li>增量式生长（分别生长）</li>
-<li>搜索速度快</li>
-</ol>
-<h2 id="Informed-RRT"><a href="#Informed-RRT" class="headerlink" title="Informed-RRT*"></a>Informed-RRT*</h2><p>改进：</p>
-<ol>
-<li>在搜索空间上进行了处理</li>
-<li>在第一次找到路径之后，缩小搜索空间来寻找更优解（<strong>也是存在缺点，可能在外面有更好的解</strong>）</li>
-</ol>
-<p><img src="/imgs/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92-RRT%E7%AE%97%E6%B3%95/image-20260317164712067.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/03/11/ROS-TF-%E5%A4%9A%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2026/03/11/ROS-TF-%E5%A4%9A%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2/" class="post-title-link" itemprop="url">ROS-TF-多坐标变换</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2026-03-11 18:20:15" itemprop="dateCreated datePublished" datetime="2026-03-11T18:20:15+08:00">2026-03-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-03-12 20:29:21" itemprop="dateModified" datetime="2026-03-12T20:29:21+08:00">2026-03-12</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="多坐标变换"><a href="#多坐标变换" class="headerlink" title="多坐标变换"></a>多坐标变换</h1><h2 id="任务需求"><a href="#任务需求" class="headerlink" title="任务需求"></a>任务需求</h2><ol>
-<li>分别发布son1 和 son2相对于world坐标系的坐标信息</li>
-<li>订阅坐标发布信息，并且借助tf2完成son1 到 son2 的转换</li>
-<li>实现坐标点之间的转换</li>
-</ol>
-<h2 id="发布方实现"><a href="#发布方实现" class="headerlink" title="发布方实现"></a>发布方实现</h2><p>由于是静态坐标系，使用launch来实现。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">launch</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 发布son1 和 son2 关于world的关系 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">&quot;tf2_ros&quot;</span> <span class="attr">type</span>=<span class="string">&quot;static_transform_publisher&quot;</span> <span class="attr">name</span>=<span class="string">&quot;son1&quot;</span> <span class="attr">args</span>=<span class="string">&quot;5 0 0 0 0 0 /world /son1&quot;</span> <span class="attr">output</span>=<span class="string">&quot;screen&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">&quot;tf2_ros&quot;</span> <span class="attr">type</span>=<span class="string">&quot;static_transform_publisher&quot;</span> <span class="attr">name</span>=<span class="string">&quot;son2&quot;</span> <span class="attr">args</span>=<span class="string">&quot;3 0 0 0 0 0 /world /son2&quot;</span> <span class="attr">output</span>=<span class="string">&quot;screen&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">launch</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="订阅方实现"><a href="#订阅方实现" class="headerlink" title="订阅方实现"></a>订阅方实现</h2><ol>
-<li>通过buffer接受信息</li>
-<li>通过buffer.lookupTransform 来获取两个坐标系之间的相对关系</li>
-<li>坐标点的解析仍然是通过buffer.transform来获取</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ros/ros.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;tf2_ros/transform_listener.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;geometry_msgs/TransformStamped.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;geometry_msgs/PointStamped.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;tf2_geometry_msgs/tf2_geometry_msgs.h&quot;</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    订阅方实现，</span></span><br><span class="line"><span class="comment">        1.计算son1 和son2之间的相对关系</span></span><br><span class="line"><span class="comment">        2.计算son1中的点在son2的表示</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    流程：</span></span><br><span class="line"><span class="comment">        1.保护头文件</span></span><br><span class="line"><span class="comment">        2.编码，初始化，NodeHandle</span></span><br><span class="line"><span class="comment">        3.创建订阅对象</span></span><br><span class="line"><span class="comment">        4.编写解析逻辑</span></span><br><span class="line"><span class="comment">        5.sponOnce</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">setlocale</span>(LC_ALL,<span class="string">&quot;&quot;</span>);</span><br><span class="line">    ros::<span class="built_in">init</span>(argc,argv,<span class="string">&quot;tfs_sub&quot;</span>);</span><br><span class="line">    ros::NodeHandle nh;</span><br><span class="line"></span><br><span class="line">    tf2_ros::Buffer buffer;</span><br><span class="line">    <span class="function">tf2_ros::TransformListener <span class="title">sub</span><span class="params">(buffer)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">ros::Rate <span class="title">r</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">    geometry_msgs::PointStamped psAtSon1;</span><br><span class="line">    </span><br><span class="line">    psAtSon<span class="number">1.</span>header.frame_id = <span class="string">&quot;son1&quot;</span>;</span><br><span class="line">    psAtSon<span class="number">1.</span>header.stamp = ros::Time::<span class="built_in">now</span>();</span><br><span class="line">    psAtSon<span class="number">1.</span>point.x = <span class="number">1</span>;</span><br><span class="line">    psAtSon<span class="number">1.</span>point.y = <span class="number">2</span>;</span><br><span class="line">    psAtSon<span class="number">1.</span>point.z = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(ros::<span class="built_in">ok</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            geometry_msgs::TransformStamped ts = buffer.<span class="built_in">lookupTransform</span>(<span class="string">&quot;son2&quot;</span>,<span class="string">&quot;son1&quot;</span>,ros::<span class="built_in">Time</span>(<span class="number">0</span>));</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">                作用：计算坐标系的相对关系</span></span><br><span class="line"><span class="comment">                参数：目标坐标系，当前坐标系，时间（传成0，这样查找的是最近的）</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">            <span class="built_in">ROS_INFO</span>(<span class="string">&quot;（父级）坐标系%s&quot;</span>,ts.header.frame_id.<span class="built_in">c_str</span>());</span><br><span class="line">            <span class="built_in">ROS_INFO</span>(<span class="string">&quot;（子级）坐标系%s&quot;</span>,ts.child_frame_id.<span class="built_in">c_str</span>());</span><br><span class="line">            <span class="built_in">ROS_INFO</span>(<span class="string">&quot;偏移量：(%.2f %.2f %.2f)&quot;</span>,ts.transform.translation.x,</span><br><span class="line">                                                         ts.transform.translation.y,</span><br><span class="line">                                                         ts.transform.translation.z);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            geometry_msgs::PointStamped psAtSon2 = buffer.<span class="built_in">transform</span>(psAtSon1,<span class="string">&quot;son2&quot;</span>);</span><br><span class="line">            <span class="built_in">ROS_INFO</span>(<span class="string">&quot;坐标点在son2中的值:(%.2f %.2f %.2f)&quot;</span>,psAtSon<span class="number">2.</span>point.x,</span><br><span class="line">                                                        psAtSon<span class="number">2.</span>point.y,</span><br><span class="line">                                                        psAtSon<span class="number">2.</span>point.z);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">catch</span>(<span class="type">const</span> std::exception&amp; e)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">ROS_INFO</span>(<span class="string">&quot;错误提示:%s&quot;</span>,e.<span class="built_in">what</span>());</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        r.<span class="built_in">sleep</span>();</span><br><span class="line">        ros::<span class="built_in">spinOnce</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/03/11/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2026/03/11/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2026-03-11 16:02:18 / Modified: 17:21:06" itemprop="dateCreated datePublished" datetime="2026-03-11T16:02:18+08:00">2026-03-11</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -612,6 +312,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%BB%A7%E6%89%BF%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">一、继承的概念及定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E7%BB%A7%E6%89%BF%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 继承的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 继承方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E7%88%B6%E7%B1%BB%E5%92%8C%E5%AD%90%E7%B1%BB%E7%9A%84%E8%B5%8B%E5%80%BC%E5%85%BC%E5%AE%B9%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 父类和子类的赋值兼容转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E7%88%B6%E7%B1%BB%E5%92%8C%E5%AD%90%E7%B1%BB%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 父类和子类的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-%E5%AD%90%E7%B1%BB%E7%9A%84%E9%BB%98%E8%AE%A4%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 子类的默认成员函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="nav-number">1.5.1.</span> <span class="nav-text">构造函数：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.2.</span> <span class="nav-text">析构函数:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E7%BB%A7%E6%89%BF%E9%97%AE%E9%A2%98"><span class="nav-number">1.6.</span> <span class="nav-text">1.6 友元函数的继承问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-%E7%BB%A7%E6%89%BF%E4%B8%8E%E9%9D%99%E6%80%81%E6%88%90%E5%91%98"><span class="nav-number">1.7.</span> <span class="nav-text">1.7 继承与静态成员</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-8-%E5%A4%9A%E7%BB%A7%E6%89%BF%E4%B8%8E%E8%8F%B1%E5%BD%A2%E7%BB%A7%E6%89%BF%E9%97%AE%E9%A2%98"><span class="nav-number">1.8.</span> <span class="nav-text">1.8 多继承与菱形继承问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-9-%E8%99%9A%E7%BB%A7%E6%89%BF"><span class="nav-number">1.9.</span> <span class="nav-text">1.9 虚继承</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

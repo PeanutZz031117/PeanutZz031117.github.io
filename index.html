@@ -145,6 +145,106 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/04/08/%E5%A4%9A%E6%80%81-cpp%E8%BF%9B%E9%98%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/04/08/%E5%A4%9A%E6%80%81-cpp%E8%BF%9B%E9%98%B6/" class="post-title-link" itemprop="url">多态-cpp进阶</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2026-04-08 19:08:58 / Modified: 20:28:08" itemprop="dateCreated datePublished" datetime="2026-04-08T19:08:58+08:00">2026-04-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h2 id="1-1-多态的定义"><a href="#1-1-多态的定义" class="headerlink" title="1.1 多态的定义"></a>1.1 多态的定义</h2><p>​	运⾏时多态，具体点就是去完成某个⾏为(函数)，可以传不同的对象就会完成不同的⾏为，就达到多种形态。</p>
+<p>​	多态条件：</p>
+<ol>
+<li>父子类中有两个虚函数，并且他们的<strong>函数名，参数，返回值</strong>都相同就构成虚函数的<em><strong>重写</strong></em></li>
+<li>必须是父类的指针或者引用来调用虚函数</li>
+</ol>
+<p>​	以此实现虚函数：传父类调父类，传子类调子类。</p>
+<p>​	目的：实现了一些场景下很灵活的调用，根据调用对象的不同，来实现不同的函数。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"> <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">BuyTicket</span><span class="params">()</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;买票-全价&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> : <span class="keyword">public</span> Person &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"> <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">BuyTicket</span><span class="params">()</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;买票-打折&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Func</span><span class="params">(Person* ptr)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> <span class="comment">// 这⾥可以看到虽然都是Person指针Ptr在调⽤BuyTicket </span></span><br><span class="line"> <span class="comment">// 但是跟ptr没关系，⽽是由ptr指向的对象决定的。 </span></span><br><span class="line"> ptr-&gt;<span class="built_in">BuyTicket</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> Person ps;</span><br><span class="line"> Student st;</span><br><span class="line"> <span class="built_in">Func</span>(&amp;ps);</span><br><span class="line"> <span class="built_in">Func</span>(&amp;st);</span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​	<strong>普通调用：看指针或者引用或者对象的类型</strong></p>
+<p>​	<strong>多态调用：看指针或者引用指向的对象</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">![<span class="number">87</span>b40f80-a57a<span class="number">-486</span>d-a07d<span class="number">-01</span>fefc5213b5](%E5%A4%<span class="number">9</span>A%E6%<span class="number">80</span>%<span class="number">81</span>-cpp%E8%BF%<span class="number">9</span>B%E9%<span class="number">98</span>%B6/<span class="number">87</span>b40f80-a57a<span class="number">-486</span>d-a07d<span class="number">-01</span>fefc5213b<span class="number">5.</span>png)<span class="keyword">class</span> <span class="title class_">A</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">A</span>()</span><br><span class="line">    &#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;~A()&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> : <span class="keyword">public</span> A &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ~<span class="built_in">B</span>()</span><br><span class="line">    &#123; </span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;~B()-&gt;delete:&quot;</span>&lt;&lt;_p&lt;&lt; endl;</span><br><span class="line">    <span class="keyword">delete</span> _p;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	<span class="type">int</span>* _p = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 只有派⽣类Student的析构函数重写了Person的析构函数，下⾯的delete对象调⽤析构函数，才能构成多态，才能保证p1和p2指向的对象正确的调⽤析构函数。 </span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    A* p1 = <span class="keyword">new</span> A;</span><br><span class="line">    A* p2 = <span class="keyword">new</span> B;</span><br><span class="line">    <span class="keyword">delete</span> p1;</span><br><span class="line">    <span class="keyword">delete</span> p2;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​	运行结果：</p>
+<p><img src="/../imgs/%E5%A4%9A%E6%80%81-cpp%E8%BF%9B%E9%98%B6/c88231a5-4155-48e3-988b-2e91e02570da.png" alt="图片"></p>
+<p>​	这里用A*指针指向B类，最后delete调用的是A的析构函数，这样会导致内存泄漏，因此引入了虚函数的第二种特殊情况。</p>
+<p>​	虚函数的两个特殊情况：</p>
+<ol>
+<li>协变：虚函数的重写返回值可以不同，要求必须返回值是父子类关系的指针或者引用<strong>（父类不写virtual，则两个BuyTicket函数构成隐藏。子类不写virtual则两个虚函数仍然构成重写，因为重写是实现重写，他会把父类的声明拿下来，子类中的实现部分作为函数内容）</strong></li>
+<li>析构函数名字的特殊处理：在父子类的析构函数前面需要加上virtual（上面的子类不写virtual仍然满足多态构成重写关系，主要就是为了这部分服务，实现只在父函数部分写上virtual，后续子类就可以不写也构成重写，实现了析构函数的重写）</li>
+</ol>
+<p>例题：</p>
+<p><img src="/../imgs/%E5%A4%9A%E6%80%81-cpp%E8%BF%9B%E9%98%B6/dd3b1df8-e1e3-4639-8f41-6d937428985e.png" alt="图片"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span></span><br><span class="line"> &#123;</span><br><span class="line"> <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> val = <span class="number">1</span>)</span></span>&#123; std::cout&lt;&lt;<span class="string">&quot;A-&gt;&quot;</span>&lt;&lt; val &lt;&lt;std::endl;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">test</span><span class="params">()</span></span>&#123; <span class="built_in">func</span>();&#125;</span><br><span class="line"> &#125;;</span><br><span class="line"> </span><br><span class="line"> <span class="keyword">class</span> <span class="title class_">B</span> : <span class="keyword">public</span> A</span><br><span class="line"> &#123;</span><br><span class="line"> <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> val = <span class="number">0</span>)</span></span>&#123; std::cout&lt;&lt;<span class="string">&quot;B-&gt;&quot;</span>&lt;&lt; val &lt;&lt;std::endl; &#125;</span><br><span class="line"> &#125;;</span><br><span class="line"> </span><br><span class="line"> <span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc ,<span class="type">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line">    B*p = <span class="keyword">new</span> B;</span><br><span class="line">    p-&gt;<span class="built_in">test</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p><img src="/../imgs/%E5%A4%9A%E6%80%81-cpp%E8%BF%9B%E9%98%B6/0825c84b-0e04-4743-a5cf-6406bf130c1b.png" alt="图片"></p>
+<p>解析：</p>
+<p><img src="/../imgs/%E5%A4%9A%E6%80%81-cpp%E8%BF%9B%E9%98%B6/b7bd889a-d284-4940-9d60-9a003dd6e8a5.png" alt="图片"></p>
+<h2 id="1-2-重载，重写，隐藏的关系"><a href="#1-2-重载，重写，隐藏的关系" class="headerlink" title="1.2 重载，重写，隐藏的关系"></a>1.2 重载，重写，隐藏的关系</h2><p><img src="/../imgs/%E5%A4%9A%E6%80%81-cpp%E8%BF%9B%E9%98%B6/87b40f80-a57a-486d-a07d-01fefc5213b5.png" alt="图片"></p>
+<h2 id="1-3-final和override关键字"><a href="#1-3-final和override关键字" class="headerlink" title="1.3 final和override关键字"></a>1.3 final和override关键字</h2><p>​	实现一个类，使得这个类不能被继承：</p>
+<ol>
+<li>把父类构造私有，这样使得派生类实例化不处对象（简介实现）</li>
+<li>加final，继承的时候直接报错</li>
+</ol>
+<p>​	final这个关键字还能修饰虚函数不能被重写。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">Drive</span><span class="params">()</span> <span class="keyword">final</span> </span>&#123;&#125;  <span class="comment">//这里直接报错</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Benz</span> :<span class="keyword">public</span> Car</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">Drive</span><span class="params">()</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;Benz-舒适&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​	override加在派生类中，帮助检查派生类是否完成重写，如果没有则报错。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">Drive</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Benz</span> :<span class="keyword">public</span> Car &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">Drive</span><span class="params">()</span> <span class="keyword">override</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;Benz-舒适&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2026/04/02/%E7%BB%A7%E6%89%BF-cpp%E8%BF%9B%E9%98%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -176,7 +276,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-04-07 20:28:14" itemprop="dateModified" datetime="2026-04-07T20:28:14+08:00">2026-04-07</time>
+                <time title="Modified: 2026-04-08 18:54:56" itemprop="dateModified" datetime="2026-04-08T18:54:56+08:00">2026-04-08</time>
               </span>
 
           
@@ -194,7 +294,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>  <span class="comment">//父类</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;name:&quot;</span> &lt;&lt; _name &lt;&lt;endl;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;age:&quot;</span> &lt;&lt; _age &lt;&lt;endl;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    string _name = <span class="string">&quot;peter&quot;</span>;</span><br><span class="line">    <span class="type">int</span> _age = <span class="number">18</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> : <span class="keyword">public</span> Person  <span class="comment">//子类</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="type">int</span> _stuid;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Teacher</span> : <span class="keyword">public</span> Person  <span class="comment">//子类</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="type">int</span> _jobid;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h2 id="1-2-继承方式"><a href="#1-2-继承方式" class="headerlink" title="1.2 继承方式"></a>1.2 继承方式</h2><p>​	一共三种继承方式：public  protected  private，他们的区别如下图</p>
-<p><img src="/../imgs/%E7%BB%A7%E6%89%BF-cpp%E8%BF%9B%E9%98%B6/image-20260402200733066.png" alt="image-20260402200733066"></p>
+<p><img src="/imgs/%E7%BB%A7%E6%89%BF-cpp%E8%BF%9B%E9%98%B6/image-20260408185438821.png" alt="image-20260408185438821"></p>
 <p>​	注意，这里的不可见不是不存在，只是无法访问父类的私有成员，但其实可以间接用，比如通过父类的成员函数例如getAge()。因此，如果希望成员可以使用父类的成员变量，则将其定义为protected。</p>
 <p>​	一般在实际应用中都是用public继承。</p>
 <h2 id="1-3-父类和子类的赋值兼容转换"><a href="#1-3-父类和子类的赋值兼容转换" class="headerlink" title="1.3 父类和子类的赋值兼容转换"></a>1.3 父类和子类的赋值兼容转换</h2><p>​	当前认为，只能子类赋值给父类，不能父类给子类。可以认为是一种切片，把子类的共有部分切片赋值给父类，并且与强制转换不同，这里没有中间变量（是一种特殊规则）。</p>
@@ -625,7 +725,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
